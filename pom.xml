@@ -165,35 +165,35 @@
           </dependencies>
         </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.21.0</version>
-          <configuration>
-            <systemPropertyVariables>
-              <okhttp.platform>${okhttp.platform}</okhttp.platform>
-            </systemPropertyVariables>
-            <redirectTestOutputToFile>true</redirectTestOutputToFile>
-            <properties>
-              <!--
-                Configure a listener for enforcing that no uncaught exceptions issue from OkHttp
-                tests. Every test must have a <scope>test</scope> dependency on
-                okhttp-testing-support.
-                -->
-              <property>
-                <name>listener</name>
-                <value>okhttp3.testing.InstallUncaughtExceptionHandlerListener</value>
-              </property>
-            </properties>
-          </configuration>
-          <dependencies>
-            <dependency>
-              <groupId>org.apache.maven.surefire</groupId>
-              <artifactId>surefire-junit47</artifactId>
-              <version>2.21.0</version>
-            </dependency>
-          </dependencies>
-        </plugin>
+        <!--<plugin>-->
+          <!--<groupId>org.apache.maven.plugins</groupId>-->
+          <!--<artifactId>maven-surefire-plugin</artifactId>-->
+          <!--<version>2.21.0</version>-->
+          <!--<configuration>-->
+            <!--<systemPropertyVariables>-->
+              <!--<okhttp.platform>${okhttp.platform}</okhttp.platform>-->
+            <!--</systemPropertyVariables>-->
+            <!--<redirectTestOutputToFile>true</redirectTestOutputToFile>-->
+            <!--<properties>-->
+              <!--&lt;!&ndash;-->
+                <!--Configure a listener for enforcing that no uncaught exceptions issue from OkHttp-->
+                <!--tests. Every test must have a <scope>test</scope> dependency on-->
+                <!--okhttp-testing-support.-->
+                <!--&ndash;&gt;-->
+              <!--<property>-->
+                <!--<name>listener</name>-->
+                <!--<value>okhttp3.testing.InstallUncaughtExceptionHandlerListener</value>-->
+              <!--</property>-->
+            <!--</properties>-->
+          <!--</configuration>-->
+          <!--<dependencies>-->
+            <!--<dependency>-->
+              <!--<groupId>org.apache.maven.surefire</groupId>-->
+              <!--<artifactId>surefire-junit47</artifactId>-->
+              <!--<version>2.21.0</version>-->
+            <!--</dependency>-->
+          <!--</dependencies>-->
+        <!--</plugin>-->
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -282,24 +282,24 @@
         <okhttp.platform>jdk-with-jetty-boot</okhttp.platform>
       </properties>
       <build>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-surefire-plugin</artifactId>
-              <configuration>
-                <argLine>-Xbootclasspath/p:${bootclasspathPrefix} -Xms512m -Xmx512m</argLine>
-              </configuration>
-              <dependencies>
-                <dependency>
-                  <groupId>org.mortbay.jetty.alpn</groupId>
-                  <artifactId>alpn-boot</artifactId>
-                  <version>${alpn.jdk7.version}</version>
-                </dependency>
-              </dependencies>
-            </plugin>
-          </plugins>
-        </pluginManagement>
+        <!--<pluginManagement>-->
+          <!--<plugins>-->
+            <!--<plugin>-->
+              <!--<groupId>org.apache.maven.plugins</groupId>-->
+              <!--<artifactId>maven-surefire-plugin</artifactId>-->
+              <!--<configuration>-->
+                <!--<argLine>-Xbootclasspath/p:${bootclasspathPrefix} -Xms512m -Xmx512m</argLine>-->
+              <!--</configuration>-->
+              <!--<dependencies>-->
+                <!--<dependency>-->
+                  <!--<groupId>org.mortbay.jetty.alpn</groupId>-->
+                  <!--<artifactId>alpn-boot</artifactId>-->
+                  <!--<version>${alpn.jdk7.version}</version>-->
+                <!--</dependency>-->
+              <!--</dependencies>-->
+            <!--</plugin>-->
+          <!--</plugins>-->
+        <!--</pluginManagement>-->
       </build>
     </profile>
     <profile>
@@ -314,24 +314,24 @@
         <okhttp.platform>jdk-with-jetty-boot</okhttp.platform>
       </properties>
       <build>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-surefire-plugin</artifactId>
-              <configuration>
-                <argLine>-Xbootclasspath/p:${bootclasspathPrefix} -Xms512m -Xmx512m</argLine>
-              </configuration>
-              <dependencies>
-                <dependency>
-                  <groupId>org.mortbay.jetty.alpn</groupId>
-                  <artifactId>alpn-boot</artifactId>
-                  <version>${alpn.jdk8.version}</version>
-                </dependency>
-              </dependencies>
-            </plugin>
-          </plugins>
-        </pluginManagement>
+        <!--<pluginManagement>-->
+          <!--<plugins>-->
+            <!--<plugin>-->
+              <!--<groupId>org.apache.maven.plugins</groupId>-->
+              <!--<artifactId>maven-surefire-plugin</artifactId>-->
+              <!--<configuration>-->
+                <!--<argLine>-Xbootclasspath/p:${bootclasspathPrefix} -Xms512m -Xmx512m</argLine>-->
+              <!--</configuration>-->
+              <!--<dependencies>-->
+                <!--<dependency>-->
+                  <!--<groupId>org.mortbay.jetty.alpn</groupId>-->
+                  <!--<artifactId>alpn-boot</artifactId>-->
+                  <!--<version>${alpn.jdk8.version}</version>-->
+                <!--</dependency>-->
+              <!--</dependencies>-->
+            <!--</plugin>-->
+          <!--</plugins>-->
+        <!--</pluginManagement>-->
       </build>
     </profile>
     <profile>
